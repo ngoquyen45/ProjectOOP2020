@@ -1,0 +1,58 @@
+.root {
+    -fx-background-color: #35363A;
+}
+
+.text-field {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+}
+
+/*Thanh thước*/
+.scroll-pane {
+    -fx-background: #35363A;
+    -fx-background-color: #35363A;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    visibility: hidden;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+    visibility: hidden;
+}
+
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    visibility: hidden;
+}
+
+.hide-thumb .scroll-bar:vertical .thumb,
+.hide-thumb .scroll-bar:horizontal .thumb {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    visibility: hidden;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:horizontal .decrement-arrow{
+    visibility: hidden;
+}
+
+
+/*Màu của thanh kéo*/
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #35363A;
+    -fx-background-insets: 1.0, 0.0, 0.0;
+    -fx-background-radius: 2.0em;
+}

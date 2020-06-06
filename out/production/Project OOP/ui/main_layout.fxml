@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import sdk.javafx.tagbar.*?>
+
+<BorderPane fx:id="borderPane" prefHeight="531.0" prefWidth="874.0" stylesheets="@assets/css/main.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainController">
+   <top>
+      <MenuBar nodeOrientation="LEFT_TO_RIGHT" styleClass="menu-item" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem id="file_menu_item" mnemonicParsing="false" onAction="#chooseFile" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="exit_menu_item" mnemonicParsing="true" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox style="-fx-background-color: #35363a;" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar style="-fx-background-color: rgba(0,0,0,0); -fx-border-color: #202124;">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin>
+               <items>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMousePressed="#chooseFile" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/img/open.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <image>
+                        <Image url="@assets/img/download.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMousePressed="#search" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <image>
+                        <Image url="@assets/img/play.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/img/chrome.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </items>
+            </ToolBar>
+            <AnchorPane>
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202124" height="40.0" layoutX="14.0" layoutY="14.0" stroke="#52adff" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="846.0" />
+                  <TagBar fx:id="listKeyword" layoutX="21.0" layoutY="14.0" prefHeight="32.0" prefWidth="832.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#202124" height="383.0" layoutX="14.0" layoutY="67.0" stroke="#52adff" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 40; -fx-arc-width: 40;" width="846.0" />
+                  <ScrollPane fx:id="scrollPane" layoutX="21.0" layoutY="75.0" prefHeight="368.0" prefWidth="832.0" style="-fx-background: #202124; -fx-background-color: #202124;">
+                     <content>
+                        <VBox fx:id="listResultVBox" prefWidth="805.0" spacing="10.0" style="-fx-font-size: 16" />
+                     </content></ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
